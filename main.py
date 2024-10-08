@@ -16,12 +16,16 @@ datos = ["La mayoría de las personas que sufren adicción tecnológica experime
 
 @app.route("/")
 def titulo():
-    return "<h1>Dependencia Digital</h1><a href=/random_datos> Datos Interesantes</a>"
+    return "<h1>Dependencia Digital</h1><a href=/random_datos> Datos Interesantes</a> <a href=/perritos> Perritos</a>"
 
 
 @app.route("/random_datos")
 def datosrandom():
     return f'<p>{random.choice(datos)}</p>'
 
+@app.route("/perritos")
+def perros():
+    return "<p>Perritos</p> <img src='https://random.dog/woof.json'>"
+    #posdata profesor, no se porque no se muestran las imagenes de perritos, espero solucionarlo
 
 app.run(debug=True)
